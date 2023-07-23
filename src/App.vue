@@ -93,38 +93,19 @@ export default defineComponent({
     })
 
     renderer.onBeforeRender(this.animate)
-    // const mesh = (this.$refs.gltf as MeshPublicInterface).mesh
-    // if (renderer && mesh) {
-    //   renderer.onBeforeRender(() => {
-    //     mesh.rotation.x += 0.01
-    //   })
-    // }
+
   },
   methods: {
     onClickModel(...e) {
-      // console.log('🚀 - onClickModel - e:', e)
-      // const { pointer } = this.renderer.three;
-      // console.log('🚀 - onClickModel - pointer:', pointer)
-      // const target = pointer.intersectObjects[0]
-      // console.log('🚀 - onClickModel - target:', target)
-      // if (target) target.material.color = new Color(0x007cff);
-
     },
     animate() {
       const { pointer } = this.renderer.three;
-      // if (this.target) this.target.copy(pointer.positionV3)
       if (this.light) {
-        // console.log('🚀 - animate - pointer:', pointer.positionV3)
-
         this.light?.position.copy(pointer.positionV3);
       }
     },
     setHightLight() {
-      // console.log('🚀 - this.model.scene:555', this.model.scene);
-      // const target = this.model.scene.children.find(item => item.material)
-      // console.log('🚀 - setHightLight - target:', target)
-      // target.color = new Color(0x007cff);
-      // this.model.scene.children[0].material.color = new Color(0x007cff);
+
       (this.model.scene)?.traverse((object) => {
         // Check if the object is the desired component
         // if (object.name === 'componentName') {
@@ -134,64 +115,17 @@ export default defineComponent({
           console.log('🚀 - object.uuid:', object.uuid)
           object.material.color = new Color(0x007cff);
         } // Change color to red
-        // Add any other desired effects
-        // }
+
       });
-
-
-      //       const canvas = renderer.domElement;
-
-      // canvas.addEventListener('mousemove', (event) => {
-      //   // Calculate the mouse position relative to the canvas
-      //   const rect = canvas.getBoundingClientRect();
-      //   const mouseX = event.clientX - rect.left;
-      //   const mouseY = event.clientY - rect.top;
-
-      //   // Use the mouse position to determine if it is over the component
-      //   if (mouseIsOverComponent(mouseX, mouseY)) {
-      //     // Apply the hover effect
-      //     applyHoverEffect(component);
-      //   } else {
-      //     // Remove the hover effect
-      //     removeHoverEffect(component);
-      //   }
-      // });
 
     },
     onReady(model) {
       this.model = model
       console.log('🚀 - onReady - model:', model)
       model.scene?.traverse(() => {
-        // console.log('🚀 - onReady - o:', child)
-        // if (child.isMesh) {
-        //   console.count('child')
-        //   console.log('🚀 - model.scene?.traverse - child:', child)
-        //   meshes.push(child);
-        //   // 石头底座样式
-        //   if (/石头/.test(child.name)) {
-        //     child.material.transparent = true
-        //   }
-        //   // 高亮气旋
-        //   if (/气旋/.test(child.name)) {
-        //     child.material.transparent = true;
-        //     child.emissive = new THREE.Color(0x0000ff);
-        //     child.emissiveIntensity = 2;
-        //   }
-        //   // link 右手
-        //   if (child.name === 'Mesh_5') {
-        //     child.material.color = new THREE.Color(0x007cff);
-        //     child.material.emissive = child.material.color;
-        //   }
-        // }
 
       })
-      //   if (o.isMesh) {
-      //     // handle both multiple and single materials
-      //     const asArray = Array.isArray(o.material) ? o.material : [o.material]
-      //     // 0 works for matte materials - change as needed
-      //     asArray.forEach(mat => mat.metalness = 0)
-      //   }
-      // })
+
     },
     gltfOver({ over }: any) {
       console.log('🚀 - gltfOver - over:', over)
