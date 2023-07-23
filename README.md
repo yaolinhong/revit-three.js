@@ -8,7 +8,7 @@ revit模型 -> glb -> 渲染模型、点击获取构件信息
 - three封装库 trois.js Read more on https://troisjs.github.io/guide/
 
 ## 导出revit模型
-[revit插件]("https://prototechsolutions.com/3d-products/revit/gltf-exporter/")
+[revit插件]("https://prototechsolutions.com/3d-products/revit/gltf-exporter")
 
 <img src="https://github.com/yaolinhong/revit-three.js/blob/main/src/assets/gltf_exporter.png?raw=true" />
 
