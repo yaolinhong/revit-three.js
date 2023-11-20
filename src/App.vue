@@ -34,8 +34,8 @@
 
       <PointLight ref="light" distance="8000" decay="200" color="#fff"></PointLight>
       <!-- <AmbientLight /> -->
-      <GLTF @click="onClickRaycaster" @load="onReady" ref="gltf" dracoPath="/src/assets/models/revit.glb"
-        src="/src/assets/models/revit.glb">
+      <GLTF @click="onClickRaycaster" @load="onReady" ref="gltf" dracoPath="/src/algorithm/draco/"
+        src="/src/assets/models/revit-compressed.glb">
         <LambertMaterial />
       </GLTF>
     </Scene>
